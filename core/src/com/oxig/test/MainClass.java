@@ -17,10 +17,8 @@ public class MainClass extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
 		cam=new OrthographicCamera();
 		cam.setToOrtho(false, newWidth, newHeight);
-
 	}
 
 	@Override
@@ -30,13 +28,11 @@ public class MainClass extends ApplicationAdapter {
 		cam.update();
 		batch.setProjectionMatrix(cam.combined);
 		batch.begin();
-		batch.draw(img,0,0,newWidth, newHeight);
 		batch.end();
 	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
